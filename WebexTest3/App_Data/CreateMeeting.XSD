@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="serv:message" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="securityContext">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="siteName" type="xs:string" />
+                    <xs:element name="webExID" type="xs:string" />
+                    <xs:element name="password" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bodyContent">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="metaData">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="confName" type="xs:string" />
+                          <xs:element name="agenda" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="participants">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="maxUserNumber" type="xs:unsignedByte" />
+                          <xs:element name="attendees">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="attendee">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="person">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="name" type="xs:string" />
+                                            <xs:element name="email" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="emailInvitations" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="enableOptions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="chat" type="xs:boolean" />
+                          <xs:element name="poll" type="xs:boolean" />
+                          <xs:element name="audioVideo" type="xs:boolean" />
+                          <xs:element name="supportE2E" type="xs:boolean" />
+                          <xs:element name="autoRecord" type="xs:boolean" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="schedule">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="startDate" type="xs:string" />
+                          <xs:element name="openTime" type="xs:unsignedShort" />
+                          <xs:element name="joinTeleconfBeforeHost" type="xs:boolean" />
+                          <xs:element name="duration" type="xs:unsignedByte" />
+                          <xs:element name="timeZoneID" type="xs:unsignedByte" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="telephony">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="telephonySupport" type="xs:string" />
+                          <xs:element name="extTelephonyDescription" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
